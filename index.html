@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Timer 2</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">Ativar dark mode!</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+      </button>
+      <section id="clock" class="flex">
+        <div id="timer">
+          <span id="minutes">25</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </div>
+        <div id="controls" class="flex">
+          <button
+            id="play"
+            data-action="toggleRunning"
+            class="ph ph-play-circle"
+          >
+            <span class="sr-only">Acionar o contador</span>
+          </button>
+          <button
+            id="pause"
+            data-action="reset"
+            class="ph ph-stop-circle toggleControl"
+          >
+            <span class="sr-only">Pausar o contador</span>
+          </button>
+          <button
+            id="increaseMin"
+            data-action="increaseMin"
+            class="ph ph-plus-circle adjustTimer"
+          >
+            <span class="sr-only"
+              >Aumenta em mais 5 minutos o tempo do timer</span
+            >
+          </button>
+          <button
+            id="decreaseMin"
+            data-action="decreaseMin"
+            class="ph ph-minus-circle adjustTimer"
+          >
+            <span class="sr-only"
+              >Diminuir em mais 5 minutos o tempo do timer</span
+            >
+          </button>
+        </div>
+      </section>
+      <section id="theme" class="flex">
+        <div class="theme-wrapper">
+          <button id="forest" class="ph ph-tree">
+            <span class="sr-only">Tema de Floresta</span>
+          </button>
+          <input
+            class="volume"
+            type="range"
+            id="forest"
+            min="0"
+            value="1"
+            max="1"
+            step="0.1"
+          />
+        </div>
+        <div class="theme-wrapper">
+          <button id="rain" class="ph ph-cloud-rain">
+            <span class="sr-only">Tema de Chuva</span>
+          </button>
+          <input
+            class="volume"
+            type="range"
+            id="rain"
+            min="0"
+            value="1"
+            max="1"
+            step="0.1"
+          />
+        </div>
+        <div class="theme-wrapper">
+          <button id="cafe" class="ph ph-storefront">
+            <span class="sr-only">Tema de Cafeitaria</span>
+          </button>
+          <input
+            class="volume"
+            type="range"
+            id="cafe"
+            min="0"
+            value="1"
+            max="1"
+            step="0.1"
+          />
+        </div>
+        <div class="theme-wrapper">
+          <button id="fireplace" class="ph ph-flame">
+            <span class="sr-only">Tema de Laleira</span>
+          </button>
+          <input
+            class="volume"
+            type="range"
+            id="fireplace"
+            min="0"
+            value="1"
+            max="1"
+            step="0.1"
+          />
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 280;
+
+  --bg-color: hsl(var(--hue), 9%, 80%);
+  --text-color: hsl(var(--hue), 5%, 7%);
+
+  --action-color: hsl(var(--hue), 76%, 60%);
+  --bg-btn: hsl(var(--hue), 9%, 89%);
+
+  --color-volume: hsl(var(--hue), 6%, 21%);
+
+  /*Theme Color Button */
+  --color-forest: hsl(120, 90%, 39%);
+  --color-rain: hsl(240, 94%, 70%);
+  --color-cafe: hsl(0, 81%, 55%);
+  --color-fireplace: hsl(24, 84%, 57%);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.dark:root {
+  --bg-color: hsl(var(--hue), 5%, 7%);
+  --text-color: hsl(var(--hue), 9%, 80%);
+  --bg-btn: hsl(var(--hue), 6%, 17%);
+  --color-volume: hsl(var(--hue), 9%, 80%);
+}
+
+body {
+  font-size: 1.6rem;
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.flex {
+  display: flex;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 19rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+
+  cursor: pointer;
+
+  font-size: 6.4rem;
+}
+
+/* Toggle-Mode */
+#toggle-mode {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+  font-size: 6rem;
+  list-style: 0;
+
+  color: var(--text-color);
+}
+
+html.dark .ph-sun,
+html:not(.dark) .ph-moon {
+  display: none;
+  visibility: hidden;
+}
+
+/* Clock */
+#clock {
+  flex-direction: column;
+  justify-content: center;
+}
+
+#timer {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  text-align: center;
+
+  font-size: 13rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#controls {
+  justify-content: space-between;
+}
+
+#controls button {
+  transition: color 0.1s, transform 0.1s;
+}
+
+#controls button:active {
+  transform: scale(0.8);
+}
+
+#controls button.toggleControl {
+  color: var(--action-color);
+}
+
+#controls button.adjustTimer:hover {
+  color: var(--action-color);
+}
+
+/* Theme */
+#theme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+.theme-wrapper {
+  position: relative;
+}
+
+.volume {
+  position: absolute;
+  width: 10rem;
+  height: 0.5rem;
+  left: 2.4rem;
+  bottom: 1.5rem;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-color: var(--bg-btn);
+}
+
+.volume::-webkit-slider-runnable-track {
+  background: var(--color-volume);
+  height: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--color-volume);
+  cursor: pointer;
+
+  margin-top: -7px;
+}
+
+#theme button {
+  width: 14rem;
+  height: 15rem;
+
+  background-color: var(--bg-btn);
+
+  border-radius: 20%;
+
+  transition: transform 0.3s, background-color 0.5s;
+}
+
+#theme button:hover {
+  transform: scale(1.1);
+}
+
+#theme .theme-wrapper:nth-child(1) button.toggleTheme {
+  background-color: var(--color-forest);
+}
+
+#theme .theme-wrapper:nth-child(2) button.toggleTheme {
+  background-color: var(--color-rain);
+}
+
+#theme .theme-wrapper:nth-child(3) button.toggleTheme {
+  background-color: var(--color-cafe);
+}
+
+#theme .theme-wrapper:nth-child(4) button.toggleTheme {
+  background-color: var(--color-fireplace);
+}
